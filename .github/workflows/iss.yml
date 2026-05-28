@@ -2,8 +2,10 @@ name: ISS Tracker
 
 on:
   schedule:
-    - cron: "0 19 * * *"   # Runs daily at 20:00 UTC (adjust as needed)
-  workflow_dispatch:        # Allows manual run from GitHub
+    # Run every 10 minutes between 18:00–23:59 IST
+    # Convert IST (UTC+5:30) to UTC → 12:30–18:29 UTC
+    - cron: "*/5 13-23 * * *"
+  workflow_dispatch:   # Allow manual run
 
 jobs:
   run-script:
