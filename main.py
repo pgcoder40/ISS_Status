@@ -40,3 +40,5 @@ def send_mail():
 if iss_overhead() and is_night():
     send_mail()
     print("Email sent successfully")
+else:
+    print("There is no ISS status")
